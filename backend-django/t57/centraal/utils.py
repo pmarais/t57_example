@@ -8,7 +8,7 @@ from .creds import credentials
 
 def connect_to_trello_retieve_list():
         client = TrelloClient(
-            api_key = credentials['api_secret'],
+            api_key = credentials['api_key'],
             api_secret = credentials['api_secret'],
             token = credentials['token'],
             token_secret = credentials['token_secret']
@@ -16,3 +16,24 @@ def connect_to_trello_retieve_list():
 
         pilot_list = client.get_list(credentials['pilot_board'])
         return pilot_list
+
+def connect_to_trello_retieve_card(card_id):
+        client = TrelloClient(
+            api_key = credentials['api_key'],
+            api_secret = credentials['api_secret'],
+            token = credentials['token'],
+            token_secret = credentials['token_secret']
+        )
+
+        card = client.get_card(card_id)
+        return card
+
+def connect_to_trello_retieve_client():
+        client = TrelloClient(
+            api_key = credentials['api_key'],
+            api_secret = credentials['api_secret'],
+            token = credentials['token'],
+            token_secret = credentials['token_secret']
+        )
+
+        return client
