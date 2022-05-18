@@ -36,6 +36,12 @@ CORS_ALLOW_ALL_ORIGINS = True
 #     "http://127.0.0.1:9000",
 # ]
 
+## Celery
+
+# Celery Configuration Options
+CELERY_TIMEZONE = "Africa/Johannesburg"
+CELERY_TASK_TRACK_STARTED = True
+CELERY_TASK_TIME_LIMIT = 30 * 60
 
 # Application definition
 

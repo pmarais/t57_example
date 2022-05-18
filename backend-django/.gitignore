@@ -1,3 +1,6 @@
+# credentials
+creds.py
+
 # Django #
 *.log
 *.pot
