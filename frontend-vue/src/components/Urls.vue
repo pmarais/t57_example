@@ -50,7 +50,7 @@ import axios from 'axios'
         // console.log(submitObj)
         const response = await axios.post('http://localhost:8000/api/urls/', submitObj)
         const data = await response.data
-        this.urls.push(response.data)
+        this.urls.unshift(response.data)
         this.newUrl = ''
       },
       async submitEdit () {
