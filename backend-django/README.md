@@ -1,4 +1,4 @@
-# Django CRUD example
+# Django CRUD backend
 
 1. Create a virtualenvironment `mkdir _venv` and `virtualenv --python=python3 _venv/`
 2. Activate the virtualenv with `source _venv/bin/activate`

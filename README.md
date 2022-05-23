@@ -1,4 +1,13 @@
 # Twenty 57 low-code example project
 
-## Django backend
+## Trello Bookmarker app
 
+Medium post: 
+
+### Django backend
+
+Instruction in the `backend-django` folder
+
+### Vue Frontend
+
+Instruction in the `frontend-vue` folder

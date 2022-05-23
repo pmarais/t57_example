@@ -43,8 +43,11 @@ CELERY_TIMEZONE = "Africa/Johannesburg"
 CELERY_TASK_TRACK_STARTED = True
 CELERY_TASK_TIME_LIMIT = 30 * 60
 
-# Application definition
+## custom email auth user
+AUTH_USER_MODEL = 'users.CustomUser'
 
+
+# Application definition
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -55,11 +58,13 @@ INSTALLED_APPS = [
 
     ## Third party
     'rest_framework',
+    'rest_framework.authtoken',
     'corsheaders',
 
     ## Custom
     'centraal',
     'api',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -102,6 +107,13 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
+}
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.BasicAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ]
 }
 
 
