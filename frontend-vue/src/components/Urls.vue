@@ -38,17 +38,23 @@ import axios from 'axios'
       return {
         newUrl: '',
         editUrl: '',
+        config: {
+          headers: {
+            'Content-Type': 'application/json',
+            'authorization': `Token ` + ''
+          }
+        }
       }
     },
     methods: {
       async getUrl (id) {
-        const response = await axios.get(`http://localhost:8000/api/urls/${id}`)
+        const response = await axios.get(`http://localhost:8000/api/urls/${id}`, this.config)
         const data = await response.data
       },
       async submit() {
         const submitObj = {u_url: this.newUrl}
         // console.log(submitObj)
-        const response = await axios.post('http://localhost:8000/api/urls/', submitObj)
+        const response = await axios.post('http://localhost:8000/api/urls/', submitObj, this.config)
         const data = await response.data
         this.urls.unshift(response.data)
         this.newUrl = ''

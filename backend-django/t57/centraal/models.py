@@ -18,7 +18,7 @@ class UserProfile(models.Model):
     p_trello_api_secret = models.CharField(max_length=255, default='', blank=True, null=True)
     p_trello_token = models.CharField(max_length=255, default='', blank=True, null=True)
     p_trello_token_secret = models.CharField(max_length=255, default='', blank=True, null=True)
-    p_trello_default_list = models.CharField(max_length=255, default='', blank=True, null=True)
+    # p_trello_default_list = models.CharField(max_length=255, default='', blank=True, null=True)
 
     def __str__(self):
         return "%s => Profile"%(self.p_user)
@@ -29,6 +29,7 @@ class Url(models.Model):
     u_created = models.DateTimeField(auto_now_add=True)
     u_modified = models.DateTimeField(auto_now=True)
     u_trello_card_id = models.CharField(max_length=255, default='', blank=True, null=True)
+    u_snapshot = models.ImageField(upload_to='snapshots', max_length=255)
 
     def __str__(self):
         return "%s) %s [%s]"%(self.pk, self.u_url, self.u_owner)

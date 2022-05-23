@@ -1,3 +1,8 @@
+#images
+t57/images/
+t57/images/*
+t57/images/*/*
+
 # credentials
 creds.py
 .DS_Store
