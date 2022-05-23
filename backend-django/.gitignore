@@ -1,5 +1,6 @@
 # credentials
 creds.py
+.DS_Store
 
 # Django #
 *.log
